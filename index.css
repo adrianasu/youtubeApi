@@ -45,9 +45,10 @@ button:focus {
   flex-direction: row;
   align-items: flex-start;
   align-content: space-around;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-wrap: wrap;
-  max-width: 80%;
+  /* max-width: 80%; */
+  min-width: 250px;
   /* max-height: 50em; */
   margin: 2% auto;
   padding: 5%;
@@ -62,8 +63,8 @@ button:focus {
 }
 
 img {
-  min-width: 100px;
   width: 100%;
+  min-width: 100px;
 }
 
 a:link,
