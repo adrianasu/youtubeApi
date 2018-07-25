@@ -17,7 +17,7 @@ function getDataFromApi(searchTerm, callback) {
 function displayYoutubeResults(data) {
 	const results = data.items.map(item =>
 			generateStringsWithResults(item));
-	$('.js-search-results').html(results).show();
+	$('.js-search-results').html(results).removeClass("hide-it");
 }
 
 function generateStringsWithResults(item) {
@@ -34,6 +34,7 @@ function watchSubmitButton() {
 			let query = $(this).find('.js-query');
 			let querySearch = query.val();
 			query.val("");
+
 		// callback function to display results from youtube api 
 			getDataFromApi(querySearch, displayYoutubeResults);
 		});
