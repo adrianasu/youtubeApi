@@ -2,7 +2,6 @@ body {
   font-family: Helvetica;
   text-align: center;
   box-sizing: border-box;
-
 }
 
 h1 {
@@ -52,7 +51,7 @@ button:focus {
   margin: 2% 5%;
   padding: 2%;
   border-radius: 10px;
-    background-color: #FF9800;
+  background-color: #ec801a;
 }
 
 .result-box {
