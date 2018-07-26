@@ -41,7 +41,6 @@ function watchButtons() {
 	});
 }
 
-
 function generateStringsWithResults(item) {
 	return `<a class="result-box" href="https://www.youtube.com/watch?v=${item.id.videoId}">
 					<img class="thumbnail" src="${item.snippet.thumbnails.medium.url}" 

@@ -21,7 +21,7 @@ h2 {
 
 p {
   font-size: 1em;
-  color: white;
+  color: #281f1f;
 }
 
 button {
@@ -36,8 +36,7 @@ button {
   font-size: 1.7em;
 }
 
-button:hover,
-button:focus {
+button:hover, button:focus {
   background-color: #31416d;
 }
 
@@ -52,7 +51,7 @@ button:focus {
   margin: 2% auto;
   padding: 2%;
   border-radius: 10px;
-  background-color: #ec801a;
+  background-color: #f26609;
 }
 
 .result-box {
@@ -65,16 +64,14 @@ img {
   min-width: 180px;
 }
 
-a:link,
-a:visited {
+a:link, a:visited {
   text-decoration: none;
   color: white;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   border-radius: 10px;
-  background-color: #efb051;
+  background-color: #ea7d35;
 }
 
 input[type=text] {
@@ -101,8 +98,7 @@ input[type=text]:focus {
   p {
     font-size: 1.4em;
   }
-  button,
-  input[type=text] {
+  button, input[type=text] {
     font-size: 2em;
   }
   .search-results {
@@ -116,8 +112,7 @@ input[type=text]:focus {
 }
 
 @media only screen and (min-device-width: 700px) {
-  button,
-  input[type=text] {
+  button, input[type=text] {
     font-size: 1.2em;
   }
   button {
