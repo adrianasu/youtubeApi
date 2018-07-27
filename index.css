@@ -10,7 +10,7 @@ h1 {
 }
 
 .hide-it {
-  visibility: hidden;
+  display: none;
 }
 
 h2 {
@@ -19,9 +19,10 @@ h2 {
   font-size: 2.5em;
 }
 
-p {
-  font-size: 1em;
-  color: #281f1f;
+label {
+  display: block;
+  color: #f26609;
+  font-size: 1.5em;
 }
 
 button {
@@ -36,11 +37,22 @@ button {
   font-size: 1.7em;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   background-color: #31416d;
 }
 
-.search-results {
+.search-results p {
+  font-size: 1.3em;
+  color: #281f1f;
+}
+
+.results p {
+  font-size: 1em;
+  color: #281f1f;
+}
+
+.results {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -64,12 +76,14 @@ img {
   min-width: 180px;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   text-decoration: none;
   color: white;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   border-radius: 10px;
   background-color: #ea7d35;
 }
@@ -98,10 +112,11 @@ input[type=text]:focus {
   p {
     font-size: 1.4em;
   }
-  button, input[type=text] {
+  button,
+  input[type=text] {
     font-size: 2em;
   }
-  .search-results {
+  .results {
     flex-direction: row;
     align-content: space-around;
     max-width: 60%;
@@ -112,7 +127,8 @@ input[type=text]:focus {
 }
 
 @media only screen and (min-device-width: 700px) {
-  button, input[type=text] {
+  button,
+  input[type=text] {
     font-size: 1.2em;
   }
   button {

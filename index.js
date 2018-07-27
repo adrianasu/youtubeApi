@@ -19,25 +19,32 @@ function getDataFromApi(searchTerm, page, callback) {
 }
 
 function displayYoutubeResults(data) {
-	const results = data.items.map(item =>
-		generateStringsWithResults(item));
-	$('.js-search-results').html(results);
-	$('.js-prev-button, .js-next-button, .js-search-results').removeClass("hide-it");
+	const results = data.items.map(generateStringsWithResults);
+	$('.js-start').hide();
+	$('.js-results-number').text(`Showing ${results.length} results of ${data.pageInfo.totalResults}`);
+	$('.js-results').html(results);
 	$('.js-prev-button').attr("data", data.prevPageToken);
 	$('.js-next-button').attr("data", data.nextPageToken);
+	$('.js-prev-button, .js-next-button, .js-reset-button, .js-results').show();
 }
 
 function watchButtons() {
 	$('.js-next-button').on('click', event => {
 		let page = $('.js-next-button').attr("data");
 		getDataFromApi(querySearch, page, displayYoutubeResults);
-		console.log("next ");
 	});
 
 	$('.js-prev-button').on('click', event => {
 		let page = $('.js-prev-button').attr("data");
 		getDataFromApi(querySearch, page, displayYoutubeResults);
-		console.log("prev ");
+	});
+
+	$('.js-reset-button').on('click', event => {
+		$('.js-prev-button').attr("");
+		querySearch = "";
+		$('.js-results-number').text("");
+		$('.js-prev-button, .js-next-button, .js-reset-button, .js-results').hide();
+		$('.js-start').show();
 	});
 }
 
@@ -48,22 +55,20 @@ function generateStringsWithResults(item) {
 }
 
 function watchSubmitButton() {
-	//  watch for when the form is submitted
 	$('.js-form').on('submit', handleSearch);
 }
 
 function handleSearch(event) {
 	event.preventDefault();
-	// get the input text value submitted
 	let query = $(this).find('.js-query');
 	querySearch = query.val();
 	query.val("");
 	let page = "";
-	// callback function to display results from youtube api 
 	getDataFromApi(querySearch, page, displayYoutubeResults);
 }
 
 function main() {
+	$('.js-prev-button, .js-next-button, .js-reset-button, .js-results').hide();
 	watchSubmitButton();
 	watchButtons();
 }

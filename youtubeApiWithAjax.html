@@ -3,7 +3,6 @@
 
 <head>
 	<meta charset="UTF-8">
-
 	<title>YouTube API</title>
 	<link rel="stylesheet" href="index.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -11,20 +10,21 @@
 
 <body>
 	<main role="main">
-		<h1>Let's watch a YouTube video</h1>
-		<form action="#" class="js-form form-box">
-			<label for='query'>
-				<input type="text" placeholder="e.g. funny cats" class="js-query">
-			</label>
-			<button type="submit">Search</button>
-		</form>
-
-		<div class='js-search-results search-results hide-it'>
-
+		<div class="js-start">
+			<h1>Let's watch a YouTube video</h1>
+			<form action="#" class="js-form form-box">
+				<label for="query">What would you like to watch?</label>
+				<input type="text" id="query" placeholder="Enter search here" class="js-query" required>
+				<button type="submit">Search</button>
+			</form>
 		</div>
-		<button role="button" type="button" class="js-prev-button hide-it" data="">Prev</button>
-		<button role="button" type="button" class="js-next-button hide-it" data="">Next</button>
-
+		<div class="js-search-results search-results">
+			<p class="js-results-number" aria-live="assertive"></p>
+			<div class="js-results results" hidden></div>
+		</div>
+		<button role="button" type="button" class="js-prev-button" data="" hidden>Prev</button>
+		<button role="button" type="button" class="js-next-button" data="" hidden>Next</button>
+		<button role="button" type="button" class="js-reset-button" data="" hidden>Reset</button>
 	</main>
 
 	<script type="text/javascript" src="index.js"></script>
